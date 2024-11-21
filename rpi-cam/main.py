@@ -15,12 +15,12 @@ def capture_and_process():
     filename = datetime.datetime.now().strftime("%Y-%m-%d-%H-%M-%S") + ".jpg"
     full_filename = "data/" + filename
 
-    #image_lcoation = capture_image(full_filename)
+    capture_image(full_filename)
     
     log.append(full_filename)
 
     # Save log to a text file
-    with open("data/log.txt", "a") as log_file:
+    with open("data/log.txt", "a+") as log_file:
         for entry in log:
             log_file.write(entry + "\n")
 
@@ -29,7 +29,8 @@ def capture_and_process():
 def main():
     '''run capture_and_process function every 5 seconds until timer finish'''
     time_now = datetime.datetime.now()
-    end_time = time_now + datetime.timedelta(hours=2)
+    end_time = time(2024, 11, 22, 8, 30, 00)
+    #end_time = time_now + datetime.timedelta(hours=2)
     #end_time  = time_now + datetime.timedelta(days=10)
     
     while datetime.datetime.now() < end_time:
