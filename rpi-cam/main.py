@@ -29,13 +29,13 @@ def capture_and_process():
 def main():
     '''run capture_and_process function every 5 seconds until timer finish'''
     time_now = datetime.datetime.now()
-    end_time = time_now + datetime.timedelta(seconds=60)
+    end_time = time_now + datetime.timedelta(hours=2)
     #end_time  = time_now + datetime.timedelta(days=10)
     
     while datetime.datetime.now() < end_time:
         capture_and_process()
         time.sleep(5)  # Adjust the sleep time as needed
-        
+
 
 
 if __name__ == "__main__":
