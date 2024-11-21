@@ -11,10 +11,3 @@ def capture_image(filename):
         print(f"Image saved as {filename}")
     except subprocess.CalledProcessError as e:
         print(f"Error occurred: {e}")
-
-if __name__ == "__main__":
-    # Filepath where the image will be saved
-    filename = "captured_image.jpg"
-    
-    # Capture the image
-    capture_image(filename)
