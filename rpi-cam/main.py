@@ -29,8 +29,8 @@ def capture_and_process():
 def main():
     '''run capture_and_process function every 5 seconds until timer finish'''
     time_now = datetime.datetime.now()
-    end_time = time(2024, 11, 22, 8, 30, 00)
-    #end_time = time_now + datetime.timedelta(hours=2)
+    #end_time = time(2024, 11, 22, 8, 30, 00)
+    end_time = time_now + datetime.timedelta(seconds=5000)
     #end_time  = time_now + datetime.timedelta(days=10)
     
     while datetime.datetime.now() < end_time:
