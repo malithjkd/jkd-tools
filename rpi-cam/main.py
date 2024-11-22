@@ -26,8 +26,6 @@ def capture_and_process():
 
 
 
-
-
 def main():
     '''run capture_and_process function every 5 seconds until timer finish'''
     time_now = datetime.datetime.now()
