@@ -28,7 +28,7 @@ def capture_and_process():
         os.remove(full_filename)
 
     # Add the filename to the log file
-    with open("data/log.txt", "a+") as log_file:
+    with open("/home/malithjkd/Documents/data/log.txt", "a+") as log_file:
         log_file.write(full_filename +"\t" + str(person_detected) + "\n")
         log_file.flush()
     
@@ -39,7 +39,7 @@ def main():
     '''run capture_and_process function every 5 seconds until timer finish'''
     time_now = datetime.datetime.now()
     #end_time = time(2024, 11, 22, 8, 30, 00)
-    end_time = time_now + datetime.timedelta(minutes=50)
+    end_time = time_now + datetime.timedelta(minutes=90)
     #end_time  = time_now + datetime.timedelta(days=10)
     person_detected = False
 
@@ -47,10 +47,8 @@ def main():
         person_detected = capture_and_process()
         if person_detected:
             time.sleep(3)  # Adjust the sleep time as needed
-            
         else:
             time.sleep(6)
-
 
 
 if __name__ == "__main__":
