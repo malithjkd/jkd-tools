@@ -3,6 +3,7 @@ import time
 
 def capture_image(filename):
     # Use libcamera-still to capture an image
+
     command = ['libcamera-still', '--immediate', '-o', filename]
     
     try:

@@ -73,15 +73,17 @@ def check_for_human(image_path):
     print("No person detected")
     return False
 
-# Example usage
-image_path = "/home/malithjkd/Documents/jkd-tools/rpi-cam/data/2024-11-22-08-44-02.jpg"
+# testing the function 
 
-# get location from image_part from to create output_path
-image_part_root = image_path.split("/")[-1] 
-image_part = image_part_root.split(".")[0]
-output_path = f"/home/malithjkd/Documents/jkd-tools/rpi-cam/data/{image_part}_output.jpg"
 
-is_person_present = check_for_human(image_path)
-#is_person_present = check_for_human_draw_box(image_path, output_path)
-print(f"Is person present: {is_person_present}")
+#image_path = "/home/malithjkd/Documents/jkd-tools/rpi-cam/data/2024-11-22-08-44-02.jpg"
+#
+## get location from image_part from to create output_path
+#image_part_root = image_path.split("/")[-1] 
+#image_part = image_part_root.split(".")[0]
+#output_path = f"/home/malithjkd/Documents/jkd-tools/rpi-cam/data/{image_part}_output.jpg"
+#
+#is_person_present = check_for_human(image_path)
+##is_person_present = check_for_human_draw_box(image_path, output_path)
+#print(f"Is person present: {is_person_present}")
 # =============================================================================

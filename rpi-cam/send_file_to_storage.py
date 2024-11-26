@@ -2,6 +2,7 @@
 
 import paramiko
 from scp import SCPClient
+import os
 
 def send_to_network_storage(local_file_path, remote_host, remote_user, remote_password, remote_directory):
     try:
@@ -25,10 +26,27 @@ def send_to_network_storage(local_file_path, remote_host, remote_user, remote_pa
         ssh.close()
 
 # Example usage
-local_file_path = "/path/to/local/file.jpg"
+#local_file_path = "/home/malithjkd/Documents/data/2024-11-22-07-23-17.jpg"
+base_dir = "/home/malithjkd/Documents/"
 remote_host = "192.168.3.30"
 remote_user = "malithjkd"
 remote_password = "R&Dtest_mj"
-remote_directory = "/path/to/remote/directory"
+remote_directory = "/home/malithjkd/Documents/image_data/"
 
-send_to_network_storage(local_file_path, remote_host, remote_user, remote_password, remote_directory)
+# send all the files in the log file to the network storage
+log_file_path = "/home/malithjkd/Documents/data/log.txt"
+
+with open(log_file_path, "r") as log_file:
+    for line in log_file:
+        local_file_path = line.strip()
+        local_file_path = base_dir + local_file_path
+        # check if the file exists
+        if not os.path.exists(local_file_path):
+            print(f"File {local_file_path} does not exist")
+        else:
+            print(f"Sending file: {local_file_path}")
+            send_to_network_storage(local_file_path, remote_host, remote_user, remote_password, remote_directory)
+            #deleate file from local storage
+            os.remove(local_file_path)
+    # Clear the log file after processing all entries
+    open(log_file_path, "w").close()
