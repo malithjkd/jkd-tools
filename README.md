@@ -2,9 +2,9 @@
 
 # create enviriment 
 ```consol
-  python3 -m venv jkd-tools-env
-  source jkd-tools-env/bin/activate
-  pip install -r jkd-tools/requirements.txt
+python3 -m venv jkd-tools-env
+source jkd-tools-env/bin/activate
+pip install -r jkd-tools/requirements.txt
 
 ```
 
