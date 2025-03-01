@@ -25,8 +25,11 @@ plt.show()
 
 # Calculate the depth map
 focal_length = 1.0  # Example focal length in pixels
-baseline = 0.1  # Example baseline in meters
+baseline = 0.083  # Example baseline in meters
 depth_map = (focal_length * baseline) / (disparity + 1e-6)  # Add a small value to avoid division by zero
+
+# Clip the depth map to a specific range (e.g., 1 to 3 meters)
+depth_map = np.clip(depth_map, 1, 3)
 
 # Display the depth map
 plt.imshow(depth_map, cmap='jet')
